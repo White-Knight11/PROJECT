@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+
+    <link rel="stylesheet" href="style_1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <center>
+        <h2><b>
+        REVIEW ON MY FIRST PROJECT </b> </h2>
+    </center>
+    <main class="glass">
+        <form method="post" id="frmsubmit">
+            <div>
+                Name:<br> <input type="text" name="Name">
+            </div>
+            <br>
+            <div>
+                Relation with sunidhi: <br><input type="text" name="relation" required>
+            </div>
+            <br>
+            <div>
+                Gender : Male <input type="radio" name="gender" value="m"> female <input type="radio" name="gender" value="f" required>
+            </div>
+            <br>
+            <div>
+                Email : <br></Email:br> <input type="email" name="Email" required>
+            </div>
+            <br>
+            <div>
+                Date of submission: <br><input type="date" name="Date">
+            </div>
+            <br>
+            <div>
+                Contact number: <br> <input type="number" name="number">
+            </div>
+            <br>
+            <div>
+                <label for="happy"> Willing to give review <br> on this first project of mine</label>
+                <input type="checkbox" name="happy" id="happy">
+            </div>
+            <br>
+            <div>
+                Leave you review <br> <textarea name="review" id="" cols="30" rows="10"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="car">
+               Want us to contact
+            </label>
+                <select name="contact" id="car">
+                <option value="No" selected > YES</option>
+                <option value="Yes"> NO</option> 
+            </select>
+            </div>
+            <br>
+            <div>
+                <button type="submit" value="Sumbit" class="btn"> SUBMIT</button>
+            </div>
+            <br>
+            <div>
+                <button type="reset" value="reset now" class="btn"> RESET </button>
+            </div>
+
+        </form>
+    </main>
+    <!---  <aside>
+        <img src="guy.jpg">
+    </aside> --->
+    <script>
+        jQuery("#frmsubmit").on("submit", function(e) {
+            e.preventDefault();
+            jQuery.ajax({
+                url: "https://script.google.com/macros/s/AKfycbzNfVKPE_kN8SBIRdWUu1Om4vL7nYfgFOyDAw21VQXJxJ4NQu79TmQrv09w81i8POup/exec",
+                type: "post",
+                data: jQuery("#frmsubmit").serialize(),
+                success: function(result) {
+                    console.log(result);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
