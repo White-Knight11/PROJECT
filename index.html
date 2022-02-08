@@ -48,7 +48,7 @@
             </div>
             <br>
             <div>
-                Leave you review <br> <textarea name="review" id="" cols="30" rows="10"></textarea>
+                Leave your review <br> <textarea name="review" id="" cols="30" rows="10"></textarea>
             </div>
             <br>
             <div>
@@ -83,6 +83,7 @@
                 data: jQuery("#frmsubmit").serialize(),
                 success: function(result) {
                     console.log(result);
+                    confirm("Do you want to save your review");
                 }
             });
         });
